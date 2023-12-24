@@ -17,7 +17,8 @@ const Page = () => {
     const [ availableSkills, setAvailableSkills ] = useState([]);
     const [detect, setDetect] = useState(false);
     const [profileDataNotFound, setProfileDataNotFound] = useState(false);
-    
+    const [educationInfo, setEducationInfo] = useState([]);
+    const [experienceInfo, setExperienceInfo] = useState([]);
 
     useEffect(()=>{
         /*  Fetching student information    */
@@ -32,7 +33,6 @@ const Page = () => {
         /* Fetching skill information (student) */
         axios.get(`${apis.getSkillOfStudent}/${studentId}`)
         .then((res) => {
-            console.log(res.data.$values)
             setYourSkills(res.data.$values)
         })
         .catch((err) => {
@@ -49,23 +49,37 @@ const Page = () => {
         })
 
         /* Fetching education information */
-        
+        axios.get(`${apis.getEducationByStudent}/${studentId}`)
+        .then((res) => {
+            setEducationInfo(res.data);
+        })
+        .catch((err) => {
+        });
+
+        /* Fetching experience information */
+        axios.get(`${apis.getExperienceByStudent}/${studentId}`)
+        .then((res) => {
+            setExperienceInfo(res.data);
+        })
+        .catch((err) => {
+            console.log(err);
+        })
 
     }, [detect])
 
 
   return (
-    <StudentProfileContext.Provider value={{ setYourSkills, availableSkills, yourSkills, setAvailableSkills, detect, setDetect, studentId, student }}>
+    <StudentProfileContext.Provider value={{ setYourSkills, availableSkills, yourSkills, setAvailableSkills, detect, setDetect, studentId, student, educationInfo, experienceInfo }}>
         {
             student == null && profileDataNotFound == false ? 
-            <div className='text-center w-full h-full mt-auto mb-auto'>
+            <div className='text-center w-10/12 h-full mt-auto mb-auto'>
                 <FontAwesomeIcon icon={faSpinner} spin className='text-center text-3xl'/>
             </div> : profileDataNotFound ? 
-            <div className='text-center w-full h-full mt-auto mb-auto'>
+            <div className='text-center w-10/12 h-full mt-auto mb-auto'>
                 <h1><span className='text-3xl text-red-500 mx-3'>404</span><span>Not Found</span></h1>
             </div>:
             <div className='w-10/12 m-6 bg-slate-200 h-fit'>
-            <h1 className='font-bold text-gray-700 text-center text-2xl'>YOUR PROFILE</h1>
+            <h1 className='py-4 font-bold text-gray-700 text-center text-2xl'>YOUR PROFILE</h1>
         
             <BasicInfo />
               

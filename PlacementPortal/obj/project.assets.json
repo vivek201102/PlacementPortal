@@ -2446,11 +2446,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vivek\\Desktop\\Sem-8 Project\\PlacementPortal\\PlacementPortal\\PlacementPortal.csproj",
+      "projectUniqueName": "C:\\Users\\vivek\\Desktop\\Project\\PlacementPortal\\PlacementPortal\\PlacementPortal.csproj",
       "projectName": "PlacementPortal",
-      "projectPath": "C:\\Users\\vivek\\Desktop\\Sem-8 Project\\PlacementPortal\\PlacementPortal\\PlacementPortal.csproj",
+      "projectPath": "C:\\Users\\vivek\\Desktop\\Project\\PlacementPortal\\PlacementPortal\\PlacementPortal.csproj",
       "packagesPath": "C:\\Users\\vivek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vivek\\Desktop\\Sem-8 Project\\PlacementPortal\\PlacementPortal\\obj\\",
+      "outputPath": "C:\\Users\\vivek\\Desktop\\Project\\PlacementPortal\\PlacementPortal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\vivek\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using PlacementPortal.DTO;
 
 namespace PlacementPortal.Models
 {
@@ -16,5 +17,17 @@ namespace PlacementPortal.Models
         public string Description { get; set; }
         public string StudentId { get; set; }
         public Student Student { get; set; }
+
+        public Experience() { }
+        public Experience(ExperienceDTO experienceDTO, Student student)
+        {
+            Title = experienceDTO.Title;
+            Description = experienceDTO.Description;
+            Organization = experienceDTO.Organization;
+            Start = experienceDTO.Start;
+            End = experienceDTO.End;
+            StudentId = experienceDTO.StudentId;
+            Student = student;
+        }
     }
 }

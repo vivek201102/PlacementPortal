@@ -8,5 +8,12 @@ export const apis = {
     getSkillId: `${basicUrl}/Skill/findId`,
     addSkillOfStudent: `${basicUrl}/StudentSkill`,
     deleteSkillOfStudent: `${basicUrl}/StudentSkill`,
-
+    getEducationByStudent: `${basicUrl}/Education`,
+    updateEducationByStudent: `${basicUrl}/Education`,
+    addEducationByStudent: `${basicUrl}/Education`,
+    deleteEducationById: `${basicUrl}/Education`,
+    getExperienceByStudent: `${basicUrl}/Experience`,
+    addExperienceByStudent: `${basicUrl}/Experience`,
+    deleteExperienceById: `${basicUrl}/Experience`,
+    updateExperienceByStudent: `${basicUrl}/Experience`
 }
