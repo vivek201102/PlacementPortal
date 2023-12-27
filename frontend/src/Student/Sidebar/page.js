@@ -10,7 +10,7 @@ const Page = () => {
               <FontAwesomeIcon icon={faHome} className='mr-3'/>
               <span className=''>Dashboard</span>
             </a>
-            <a className='px-12 py-3 my-3 hover:bg-slate-800 w-full' href='/admin/drives'>
+            <a className='px-12 py-3 my-3 hover:bg-slate-800 w-full' href='/student/drives'>
               <FontAwesomeIcon icon={faBriefcase} className='mr-3'/>
               <span className=''>Active Drives</span>
             </a>

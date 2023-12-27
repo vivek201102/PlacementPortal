@@ -1,9 +1,8 @@
-import { faCircleCheck, faCircleXmark, faEye, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faCircleCheck, faCircleXmark, faEye } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 
 const requests = () => {
-    const driveRequests = [1,2,3];
     const coordinatorRequests = [1,2,3];
   return (
     <div className='w-10/12 m-6'>

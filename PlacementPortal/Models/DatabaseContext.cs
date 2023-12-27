@@ -5,13 +5,13 @@ namespace PlacementPortal.Models
     public class DatabaseContext : DbContext
     {
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
-        {
-        }
-        public DbSet<Student> Students { get; set;}
-        public DbSet<Skill> Skills { get; set;}
-        public DbSet<Education> Educations { get; set;}
-        public DbSet<Experience> Experiences { get; set;}
-        public DbSet<StudentSkill> StudentSkills { get; set;}
+        {}
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Skill> Skills { get; set; }
+        public DbSet<Education> Educations { get; set; }
+        public DbSet<Experience> Experiences { get; set; }
+        public DbSet<StudentSkill> StudentSkills { get; set; }
+        public DbSet<PlacementDrive> PlacementDrives { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

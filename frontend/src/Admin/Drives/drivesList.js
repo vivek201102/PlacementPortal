@@ -1,13 +1,22 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { faCirclePlus, faEye } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { DrivesContext } from '../../Context/context';
 
 const DrivesList = ({setAddDriveVisible}) => {
-    const placementDrives = [ 1,2,3 ];
+    const { drives } = useContext(DrivesContext);
     const onClickAddDrive = () => {
         setAddDriveVisible(true);
     }
+
+    const formatDate = (inputDateString) => {
+        const inputDate = new Date(inputDateString);
+        const options = { day: '2-digit', month: 'short', year: 'numeric' };
+        const formattedDate = new Intl.DateTimeFormat('en-US', options).format(inputDate);
+        return formattedDate;
+      };
+
   return (
     <div className='m-6'>
         <div className='ms-auto cursor-pointer hover:bg-slate-400 my-3 px-5 py-2 bg-slate-300 w-fit border rounded-md' onClick={onClickAddDrive}>
@@ -39,11 +48,11 @@ const DrivesList = ({setAddDriveVisible}) => {
                     </thead>
                     <tbody className='text-center'>
                     {
-                        placementDrives.map((element, index) => (
+                        drives.map((element, index) => (
                             <tr>
-                                <td className='px-5 py-3'>HHAexchange</td>
-                                <td className='px-5 py-3'>12-July-2023</td>
-                                <td className='px-5 py-3'>Software Engineer</td>
+                                <td className='px-5 py-3'>{element.companyName}</td>
+                                <td className='px-5 py-3'>{formatDate(element.createdAt)}</td>
+                                <td className='px-5 py-3'>{element.role}</td>
                                 <td className='px-5 py-3'><FontAwesomeIcon icon={faEye} className='cursor-pointer text-blue-900'/></td>
                                 <td className='px-5 py-3'><FontAwesomeIcon icon={faTrash} className='cursor-pointer text-red-600'/></td>
                                 </tr>

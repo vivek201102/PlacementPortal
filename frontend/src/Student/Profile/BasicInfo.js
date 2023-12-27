@@ -1,8 +1,10 @@
 import React, { useContext } from 'react'
 import { StudentProfileContext } from '../../Context/context'
 
+
 const BasicInfo = () => {
-    const { detect, setDetect, student } = useContext(StudentProfileContext);
+    const { student } = useContext(StudentProfileContext);
+    
   return (
     <div>
         <div className='flex flex-wrap'>
@@ -29,6 +31,10 @@ const BasicInfo = () => {
             <div className='p-3 w-full'>
                 <label className='py-2 px-5 block font-bold text-gray-700 uppercase'>Address</label>
                 <input className='w-full px-5 py-2 rounded-full focus:outline-none' defaultValue={student.address} />
+            </div>
+            <div className='p-3 w-full'>
+                <label className='py-2 px-5 block font-bold text-gray-700 uppercase'>Resume</label>
+                <input className='w-full px-5 py-2 rounded-full focus:outline-none' type='file' />
             </div>
         </div>
     </div>

@@ -15,5 +15,8 @@ export const apis = {
     getExperienceByStudent: `${basicUrl}/Experience`,
     addExperienceByStudent: `${basicUrl}/Experience`,
     deleteExperienceById: `${basicUrl}/Experience`,
-    updateExperienceByStudent: `${basicUrl}/Experience`
+    updateExperienceByStudent: `${basicUrl}/Experience`,
+    getStudentInformation: `${basicUrl}/Student`,
+    postPlacementDrive: `${basicUrl}/PlacementDrive`,
+    getAllPlacementDrive: `${basicUrl}/PlacementDrive`
 }
